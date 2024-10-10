@@ -23,12 +23,17 @@ li {
 
 .pokemon-card {
     text-align: center;
+    border-radius: 8px;
+    overflow: hidden; /* Para garantir que o conteúdo não extrapole as bordas arredondadas */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .pokemon-img {
     width: 200px;
 }
 
+/* Cores básicas */
 .fire { background-color: #c27e10 }
 .grass { background-color: #4CAF50 }
 .dragon { background-color: #3263cc }
@@ -47,15 +52,3 @@ li {
 .water { background-color: #00BFFF }
 .flying { background-color: #23f1c7 }
 .ghost { background-color: #5626de }
-
-.fire-grass { background: linear-gradient(to right, #c27e10 50%, #4CAF50 50%) }
-.grass-water { background: linear-gradient(to right, #4CAF50 50%, #00BFFF 50%) }
-/* Continue adicionando combinações conforme necessário */
-
-.pokemon-card {
-    text-align: center;
-    border-radius: 8px;
-    overflow: hidden; /* Para garantir que o conteúdo não extrapole as bordas arredondadas */
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-}
