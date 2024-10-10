@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pokemon</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <div class="search-bar">
+        <input type="text" placeholder="Procure seu pokémon">
+    </div>
+    <div class="pokemon-container">
+        <ul>
+            <li v-for="pokemon in pokemons" :key="pokemon.id" :class="getTypeClass(pokemon.types[0].type.name)">
+                <div class="pokemon-card">
+                    <p>{{ pokemon.name}}</p>
+                    <div class="pokemon-img">
+                        <img :src="pokemon.sprites.other.showdown.front_default">
+                    </div>
+                    <p>{{pokemon.types[0].type.name}}</p>
+                    <p v-if="pokemon.types.length > 1">{{pokemon.types[1].type.name}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="loading">
+        <h1 v-if="loading">Loading...</h1>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="index.js"></script>
