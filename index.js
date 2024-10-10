@@ -96,9 +96,9 @@ createApp({
             if (pokemon.types.length > 1) {
                 const type1 = pokemon.types[0].type.name;
                 const type2 = pokemon.types[1].type.name;
-                return `${type1}-${type2}`;
+                return `${type1}-${type2} dark-text`;
             }
-            return pokemon.types[0].type.name;
+            return `${pokemon.types[0].type.name} dark-text`;
         },
         generateTypeCombinations() {
             const typeKeys = Object.keys(this.typeColors);
@@ -111,8 +111,8 @@ createApp({
                         style.innerHTML = `
                             .${className} {
                                 background: linear-gradient(to right, ${this.typeColors[type1]} 50%, ${this.typeColors[type2]} 50%);
-                            }
-                        `;
+                                color: white;
+                            }`;
                         document.getElementsByTagName('head')[0].appendChild(style);
                     }
                 });

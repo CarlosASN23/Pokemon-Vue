@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>pokemon</title>
+    <title>Pokedex</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,17 +16,16 @@
            <!-- <li v-for="pokemon in filteredPokemons" :key="pokemon.id" :class="getTypeClass(pokemon.types[0].type.name)"> -->
             <li v-for="pokemon in filteredPokemons" :key="pokemon.id" :class="getTypeClass(pokemon)">
                 <div class="pokemon-card">
-                    <p>{{ pokemon.name }}</p>
+                    <p class="dark-text">{{ pokemon.name }}</p>
                     <div class="pokemon-img">
                         <img :src="pokemon.sprites.other.showdown.front_default">
                     </div>
-                    <p>{{ pokemon.types[0].type.name }}</p>
-                    <p v-if="pokemon.types.length > 1">{{ pokemon.types[1].type.name }}</p>
+                    <p class="dark-text">{{ pokemon.types[0].type.name }}</p>
+                    <p v-if="pokemon.types.length > 1" class="dark-text">{{ pokemon.types[1].type.name }}</p>
                 </div>
             </li>
         </ul>
     </div>
-
     <div class="loading">
         <h1 v-if="loading">Loading...</h1>
     </div>
