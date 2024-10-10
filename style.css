@@ -3,7 +3,28 @@ body {
     background-color: #f5f5f5;
     margin: 0;
 }
+.search-bar {
+    position: fixed; /* Fixa a barra de pesquisa no topo */
+    top: 0; /* Posiciona no topo */
+    width: 100%; /* Largura total da tela */
+    background-color: white; /* Fundo branco para contraste */
+    z-index: 1000; /* Garante que a barra fique acima dos outros elementos */
+    padding: 10px 0; /* Espaçamento vertical */
+    display: flex; /* Flexbox para centralização */
+    justify-content: center; /* Centraliza horizontalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque */
+}
 
+.search-bar input {
+    width: 50%; /* Define a largura do input */
+    padding: 10px; /* Espaçamento interno do input */
+    border-radius: 20px; /* Bordas arredondadas */
+    border: 1px solid #ccc; /* Borda cinza clara */
+}
+
+.pokemon-container {
+    margin-top: 70px; /* Espaçamento para compensar a barra de pesquisa fixa */
+}
 ul {
     list-style-type: none;
     padding: 0;
